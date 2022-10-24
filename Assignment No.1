@@ -1,0 +1,296 @@
+ Assignment 1
+Set A
+1) Write R Program To Add ,Multiply, Divide Two Vectors Integer Type Of Integer Type(Vector lenght should be Minimum 4) */
+ 🡢
+Addition: 
+A<-c(10,20,30,40)
+B<-c(1,2,3,4)
+result=A+B
+print(result)
+
+Output:[1] 11 22 33 44
+
+Multiplication: 
+A<-c(10,20,30,40)
+B<-c(1,2,3,4)
+result=A*B
+print(result)
+
+Output: [1]  10  40  90 160
+
+Division: 
+A<-c(10,20,30,40)
+B<-c(1,2,3,4)
+result=A/B
+print(result)
+
+Output:[1] 10 10 10 10
+	
+2)Write R Program To Calculate Multiplication table using a function.
+🡢
+table<-function(n){
+for(i in 1:10)
+{
+print(paste(n,'*',i,'=',i*n))
+}}
+table(5)
+
+Output:[1] "5 * 1 = 5"
+[1] "5 * 2 = 10"
+[1] "5 * 3 = 15"
+[1] "5 * 4 = 20"
+[1] "5 * 5 = 25"
+[1] "5 * 6 = 30"
+[1] "5 * 7 = 35"
+[1] "5 * 8 = 40"
+[1] "5 * 9 = 45"
+[1] "5 * 10 = 50"
+
+3)Write R Program to sort a list of string in ascending and descending order
+🡢
+Ascending Order:
+num<-c("Aditya","Omganesh","Harsh","Pranav")
+Asc_num<-sort(num)
+cat('Ascending Order',Asc_num,'\n')
+
+Output:Ascending Order Aditya Harsh Omganesh Pranav 
+
+Descending Order:
+Desc_num<-sort(num,decreasing = TRUE)
+cat('Descending Order',Desc_num)
+
+Output:Descending Order Pranav Omganesh Harsh Aditya
+
+4) Write a Script in R to create a list of employee and perform the following
+a.Display names of employee in the list
+b.Add an employee at the end of the list.
+c.Remove the third element of the list
+
+a🡢
+list_data <-list("Aditya"  , "Omganesh", "Pranav" ,  "Harsh")
+ print(list_data)
+ 
+Output:
+[[1]]
+[1] "Aditya"
+
+[[2]]
+[1] "Omganesh"
+
+[[3]]
+[1] "Pranav"
+
+[[4]]
+[1] "Harsh"
+
+b🡢
+list_data[5]<-"Shreyash"
+> print(list_data)
+
+Output:
+[[1]]
+[1] "Aditya"
+
+[[2]]
+[1] "Omganesh"
+
+[[3]]
+[1] "Ganesh"
+
+[[4]]
+[1] "Harsh"
+
+[[5]]
+[1] "Shreyash"
+
+c🡢
+list_data[3]<-NULL
+print(list_data)
+
+Output:
+[[1]]
+[1] "Aditya"
+
+[[2]]
+[1] "Omganesh"
+
+[[3]]
+[1] "Harsh"
+
+[[4]]
+[1] "Shreyash"
+
+Set B
+1.Write a R Program to reverse the number and also calculate the sum of digits of that number
+🡢
+{
+n=as.integer(readline(prompt = "Enter The Number"))
+rev=0
+while(n>0)
+{
+r=n%%10
+rev=rev*10+r
+n=n%/%10
+}
+print(paste("Reverse Number is:",rev))
+}
+
+Output:Enter The Number123
+[1] "Reverse Number is: 321"
+
+2.Write R program to calculate the sum of two matrices of given size.
+🡢
+matrix1<-matrix(c(11,12,13,14,15,16,17,18,19),nrow=3,ncol=3,byrow=TRUE)
+> matrix1
+ [,1] [,2] [,3]
+[1,]   11   12   13
+[2,]   14   15   16
+[3,]   17   18   19
+
+matrix2<-matrix(c(1,2,3,4,5,6,7,8,9),nrow=3,ncol=3,byrow=TRUE)
+> matrix2
+[,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+[3,]    7    8    9
+
+result=matrix1+matrix2
+print(result)
+
+Output:
+[,1] [,2] [,3]
+[1,]   12   14   16
+[2,]   18   20   22
+[3,]   24   26   28
+
+3.Write R Program to concatenate two given factors.
+🡢
+vec1<-1:9
+vec1
+vec2<-9:1
+vec2
+c(vec1,vec2)
+
+Output:
+[1] 1 2 3 4 5 6 7 8 9
+[1] 9 8 7 6 5 4 3 2 1
+ [1] 1 2 3 4 5 6 7 8 9 9 8 7 6 5 4 3 2 1
+ 
+4.Write R Program to create data frame using two giving vectors and display the duplicate elements.
+🡢
+companies<-data.frame(Shares=c("TCS","Reliance","HDFC Bank","Infosys","Reliance"))
+companies
+companies[duplicated(companies),]
+
+Output:[1] "Reliance"
+
+5.Write R Program to perform Following:
+a.Display all rows of the data set having weight greater than 120.
+b.Display all rows of the data set in ascending order of weight
+(Use inbuilt data set of women)
+
+a🡢
+ans<-women[women$weight>120,]
+ans
+
+Output: height weight
+4      61    123
+5      62    126
+6      63    129
+7      64    132
+8      65    135
+9      66    139
+10     67    142
+11     68    146
+12     69    150
+13     70    154
+14     71    159
+15     72    164
+
+b🡢
+ans<-women[order(data$weight),]
+ans
+
+Output:height weight
+1      58    115
+2      59    117
+3      60    120
+4      61    123
+5      62    126
+6      63    129
+7      64    132
+8      65    135
+9      66    139
+10     67    142
+11     68    146
+12     69    150
+13     70    154
+14     71    159
+15     72    164
+
+6.Write R Program to perform the following:
+a.Display all the cars having mpg more than 20.
+b.Subset the data Set by mpg coloumn for values greater than 15.0
+c.Display all cars having four gears
+(Use inbuilt data set mtcar)
+
+a🡢
+ans<-mtcars[mtcars$mpg>20,]
+ans
+
+Output:
+               mpg  cyl  disp  hp drat    wt  qsec vs am gear
+Mazda RX4      21.0   6 160.0 110 3.90 2.620 16.46  0  1    4
+Mazda RX4 Wag  21.0   6 160.0 110 3.90 2.875 17.02  0  1    4
+Datsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4
+Hornet 4 Drive 21.4   6 258.0 110 3.08 3.215 19.44  1  0    3
+Merc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4
+Merc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0    4
+Fiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4
+Honda Civic    30.4   4  75.7  52 4.93 1.615 18.52  1  1    4
+Toyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4
+Toyota Corona  21.5   4 120.1  97 3.70 2.465 20.01  1  0    3
+Fiat X1-9      27.3   4  79.0  66 4.08 1.935 18.90  1  1    4
+Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.70  0  1    5
+Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5
+Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.60  1  1    4
+               carb
+Mazda RX4         4
+Mazda RX4 Wag     4
+Datsun 710        1
+Hornet 4 Drive    1
+Merc 240D         2
+Merc 230          2
+Fiat 128          1
+Honda Civic       2
+Toyota Corolla    1
+Toyota Corona     1
+Fiat X1-9         1
+Porsche 914-2     2
+Lotus Europa      2
+Volvo 142E        2
+
+b🡢
+********
+
+
+
+c🡢
+ans<-mtcars[mtcars$gear>4,]
+ans
+
+Output:
+				mpg  cyl disp  hp drat   wt  qsec vs am gear carb
+Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.7  0  1    5    2
+Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.9  1  1    5    2
+Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.5  0  1    5    4
+Ferrari Dino   19.7   6 145.0 175 3.62 2.770 15.5  0  1    5    6
+Maserati Bora  15.0   8 301.0 335 3.54 3.570 14.6  0  1    5    8
+
+Set C 
+1.Write R Program to perform the following
+a.Create a Scattered Plot to Compare wind speed and temperature.
+b.Create a Scattered Plot to Show Relationship between ozone and wind values by giving appropriate values to color argument.
+c.Create a bar plot show the ozone level for all the days having temperature >70.
+(Use inbuilt dataset air quality)
+
