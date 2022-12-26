@@ -290,8 +290,26 @@ Maserati Bora  15.0   8 301.0 335 3.54 3.570 14.6  0  1    5    8
 //Set C 
 1.Write R Program to perform the following
 a.Create a Scattered Plot to Compare wind speed and temperature.
-b.Create a Scattered Plot to Show Relationship between ozone and wind values by giving appropriate values to color argument.
-c.Create a bar plot show the ozone level for all the days having temperature >70.
-(Use inbuilt dataset air quality) //
+🡢
+input<-airquality[,c('Wind','Temp')]
+ print(head(input))
+input<-airquality[,c('Wind','Temp')]
+png=(file="new ")
+ plot(x=airquality$Wind,
+ y=airquality$Temp,
+ main="A quick comparison")
 
+b.Create a Scattered Plot to Show Relationship between ozone and wind values by giving appropriate values to color argument.
+🡢
+input<-airquality[,c('Ozone','Wind')]
+ print(head(input))
+input<-airquality[,c('Ozone','Wind')]
+ png=(file="new2")
+ plot(x=airquality$Ozone,
+ y=airquality$Wind,
+ main="Ozone and Wind Rel")
+
+c.Create a bar plot show the ozone level for all the days having temperature >70.
+(Use inbuilt dataset air quality)
+🡢jamat asel tar try kara
 
